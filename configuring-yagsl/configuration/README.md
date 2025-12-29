@@ -106,7 +106,7 @@ Vurgulanan satırları değiştirin ve modül konfigürasyonlarını doğru şek
 
 İşte size bir meydan okuma, bu yanlış konfigürasyonu nasıl çözebilirsiniz?
 
-<img src="../../.gitbook/assets/id_spin1.png" alt="While rotating right" data-size="original"><img src="../../.gitbook/assets/challenge_reorder2.png" alt="Translating right" data-size="original">
+![While rotating right](../../.gitbook/assets/id_spin1.png) ![Translating right](../../.gitbook/assets/challenge_reorder2.png)
 
 </details>
 
@@ -163,7 +163,7 @@ Swerve sürüşünü oluşturmak için `modules` klasörü, [`controllerproperti
 1. `physicalproperties.json` dosyasından `wheelDiamter`, `gearRatio`, `encoderPulsePerRotation` alanlarını silin
 2. `physicalproperties.json` dosyasına `optimalVoltage` ekleyin
 3. `swervedrive.json` dosyasından `maxSpeed` ve `optimalVoltage` alanlarını silin
-4. **EĞER** bir swerve modülü, swerve sürüşünün geri kalanıyla aynı sürüş motoruna veya dümenleme motoruna sahip değilse, modül konfigürasyonu JSON dosyasında HEM sürüş hem de dümenleme motoru için bir `conversionFactor` (dönüşüm faktörü) belirtmelisiniz. EĞER motorlardan biri swerve sürüşünün geri kalanıyla aynıysa ve o `conversionFactor`'ü kullanmak istiyorsanız, modül JSON konfigürasyonunda `conversionFactor`'ü 0 olarak ayarlayın.
+4. **EĞER** bir swerve modülü, swerve sürüşünün geri kalanıyla aynı sürüş motoruna veya rotasyon motoruna sahip değilse, modül konfigürasyonu JSON dosyasında HEM sürüş hem de dümenleme motoru için bir `conversionFactor` (dönüşüm faktörü) belirtmelisiniz. EĞER motorlardan biri swerve sürüşünün geri kalanıyla aynıysa ve o `conversionFactor`'ü kullanmak istiyorsanız, modül JSON konfigürasyonunda `conversionFactor`'ü 0 olarak ayarlayın.
 5. `new SwerveParser(directory).createSwerveDrive(maximumSpeed);` aracılığıyla bir `SwerveDrive` oluştururken maksimum hızı belirtmelisiniz.
 6. EĞER `swervedrive.json`'da `conversionFactor` ayarlamak istemiyorsanız. Bunu kurucuya (constructor) bir parametre olarak şu şekilde geçirebilirsiniz
 

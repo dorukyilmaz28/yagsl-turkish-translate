@@ -1,13 +1,30 @@
 # Açısal Hız Telafisi
 
-YAGSL, açısal hız telafisi için Jack-in-the-bot tarafından öncülük edilen bir yöntem kullanır. Bunu etkinleştirmek için `SwerveDrive.setAngularVelocityCompensation(true, true, 0.1);` kullanırsınız; burada ilk parametre teleop'ta etkin durumu, ikincisi otonomda etkin durumu ve üçüncüsü kullanılacak katsayıdır.
+YAGSL, açısal hız telafisi için Jack-in-the-bot tarafından geliştirilen bir yöntemi kullanır. Bu özellik etkinleştirildiğinde, robot dönerken oluşan kayma (skew) azaltılmaya çalışılır.
 
-İlk kez etkinleştirildiğinde sapma (skew) önemli ölçüde daha kötüyse değeri tersine çevirmeyi (negatif yapmayı) deneyin.
+Bu özellik, `SwerveDrive.setAngularVelocityCompensation(true, true, 0.1)` metodu ile etkinleştirilir.
 
-1. Dönerken düz bir çizgide hareket ederek ayarlayın.
-   * Test en iyi sağ çubuktaki açısal hız kontrolleriyle yapılır.
-2. Sapmadan görsel olarak memnun olana kadar değeri değiştirin.
-3. Ayarınızın farklı öteleme ve dönme büyüklükleriyle çalıştığından emin olun.
-4. Bu, teleop'ta sapmayı azaltırsa, otonomu iyileştirebilir.
+Parametrelerin anlamı:
 
-**PR** [**#231**](https://github.com/BroncBotz3481/YAGSL-Example/pull/231) **içinde** [**yapplejack**](https://github.com/yapplejack) tarafından oluşturuldu.
+* Birinci parametre: Teleop modunda etkin olup olmadığı
+* İkinci parametre: Otonom modda etkin olup olmadığı
+* Üçüncü parametre: Kullanılacak telafi katsayısı (coefficient)
+
+***
+
+#### Ayarlama (Tuning)
+
+Özelliği ilk kez etkinleştirdiğinizde, eğer robotun kayması belirgin şekilde artıyorsa, katsayının işaretini tersine çevirmeyi deneyin.
+
+Ayarlama işlemi şu şekilde yapılmalıdır:
+
+* Robotu düz bir hatta hareket ettirirken aynı anda döndürün
+* Açısal hız kontrolü için sağ joystick kullanılması önerilir
+* Kayma görsel olarak azalacak şekilde katsayıyı değiştirin
+* Farklı doğrusal ve açısal hız büyüklüklerinde ayarın tutarlı çalıştığından emin olun
+
+Teleop sürüşte kaymayı azaltıyorsa, otonom sürüş performansını da iyileştirebilir.
+
+***
+
+Bu özellik, **PR** [**#231**](https://github.com/BroncBotz3481/YAGSL-Example/pull/231) kapsamında [**yapplejack**](https://github.com/yapplejack) tarafından eklenmiştir.&#x20;

@@ -16,11 +16,15 @@ description: Swerve Sürüşü nasıl çalışır?
 
 ## Temeller
 
-Swerve Sürüşleri, her tekerleği belirli bir açıya/azimuta hareket ettirerek ve o yöne gitmek için tekerleği döndürerek hareket eder. Swerve Sürüşleri benzersizdir çünkü öteleme hareketlerinden bağımsız olarak dönebilirler, yani herhangi bir yöne bakarken herhangi bir yönde hareket edebilirsiniz. Bunun bir sonucu olarak "yerinde dönebilir" ve bir alanın etrafında hareket ederken dönebilirsiniz. Robotunuzun dönüşü **başlık (heading)** olarak adlandırılır.
+Swerve Drive sistemleri, her bir tekerleği belirli bir açıya (azimuth) döndürerek ve tekerleği o yönde sürerek hareket eder. Bu sistemlerin en ayırt edici özelliği, dönme hareketinin doğrusal hareketten bağımsız olmasıdır. Bu sayede robot, herhangi bir yöne hareket ederken aynı anda farklı bir yöne bakabilir. Robot yerinde dönebilir ya da hareket hâlindeyken dönmeye devam edebilir. Robotun bu dönme hareketi ve yönelimi **“heading”** olarak adlandırılır.
 
 ## Swerve Drive Nedir?
 
-Bir Swerve Drive tipik olarak 4 Swerve Modülünden (özünde bir sürüş motoru, bir açı/azimut motoru ve bir mutlak enkoder) ve bir jiroskoptan (ortalanmış en iyisidir) oluşur. Motorlar, mutlak enkoderler ve jiroskop önemli değildir ve hepsi değişen derecelerde başarı ile birlikte çalışabilir. Genel bir kural olarak, bir sisteme bağlı kalabilirseniz bunu yapın (tamamı REV, tamamı CTRE gibi). Bu size en iyi özellik setini verecektir ancak aynı değildirler! Diğer tüm kullanım durumları için YAGSL en iyi seçimdir çünkü YAGSL, tüm sensörleri ve motor kontrolcülerini işlevsel olarak eşdeğer hale getirmek için soyutlama (abstraction) düşünülerek oluşturulmuştur.
+Bir Swerve Drive sistemi genellikle 4 adet swerve modülünden ve bir jiroskoptan oluşur (jiroskopun robotun merkezine yerleştirilmesi önerilir). Her bir swerve modülü temel olarak bir sürüş motoru, bir açı/azimuth motoru ve bir mutlak (absolute) enkoder içerir.
+
+Kullanılan motorlar, mutlak enkoderler ve jiroskoplar farklı üreticilerden olabilir ve birlikte çalışabilir; ancak başarı düzeyleri değişkenlik gösterebilir. Genel bir kural olarak, mümkünse tek bir donanım ekosistemine bağlı kalmak (örneğin tamamen REV veya tamamen CTRE) daha sorunsuz bir yapı ve daha zengin özellik seti sunar. Bununla birlikte, bu sistemler birbirinin aynısı değildir.
+
+Farklı donanımların birlikte kullanıldığı tüm diğer senaryolarda ise YAGSL en uygun çözümdür. YAGSL, sensörleri ve motor sürücülerini işlevsel olarak eşdeğer hâle getirmeyi hedefleyen bir soyutlama yaklaşımıyla tasarlanmıştır.
 
 #### Özet
 
@@ -32,7 +36,7 @@ Bir swerve drive şunlardan oluşur:
   * [ ] Sürüş Motoru
   * [ ] Mutlak Enkoder
 
-#### Özet Sorunlara neden olan şeyler
+#### Başlıca Sorunlara Neden Olan Şeyler
 
 * [ ] Kötü Ağırlık Merkezi
 * [ ] Ortalanmamış jiroskop
@@ -42,7 +46,7 @@ Bu tam bir liste değildir ve zamanla büyüyecektir.
 
 ## Swerve Drive kodda nasıl çalışır?
 
-Swerve Sürüşleri, her modülü gitmek istediğiniz yöne ve bakmak istediğiniz başlığa göre belirlenen belirli bir açıya hareket ettirir. FRC için bu değerleri robotun kinematiğini hesaplayarak elle alabiliriz veya [`ChassisSpeeds`](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/ChassisSpeeds.html) nesnesi verildiğinde her tekerleğin dönüşünün ve hızının ne olması gerektiğini belirlemek için modül konumlarını kullanan ve bir [`SwerveModuleState`](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/SwerveModuleState.html) dizisi döndüren [`SwerveDriveKinematics`](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/SwerveDriveKinematics.html) kullanabiliriz. [`SwerveModuleState`](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/SwerveModuleState.html) daha sonra her Swerve Modülünün istenen başlığa bakarak istenen yönde gitmesi için karşılık gelen açıyı/azimutu ve hızı ayarlamak için kullanılabilir.
+Swerve Drive, her modülü gitmek istediğiniz yöne ve bakmak istediğiniz başlığa göre belirlenen belirli bir açıya hareket ettirir. FRC için bu değerleri robotun kinematiğini hesaplayarak elle alabiliriz veya [`ChassisSpeeds`](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/ChassisSpeeds.html) nesnesi verildiğinde her tekerleğin dönüşünün ve hızının ne olması gerektiğini belirlemek için modül konumlarını kullanan ve bir [`SwerveModuleState`](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/SwerveModuleState.html) dizisi döndüren [`SwerveDriveKinematics`](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/SwerveDriveKinematics.html) kullanabiliriz. [`SwerveModuleState`](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/SwerveModuleState.html) daha sonra her Swerve Modülünün istenen başlığa bakarak istenen yönde gitmesi için karşılık gelen açıyı/azimutu ve hızı ayarlamak için kullanılabilir.
 
 ### `SwerveDriveKinematics`
 

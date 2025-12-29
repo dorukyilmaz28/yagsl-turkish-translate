@@ -1,6 +1,6 @@
 # Swerve Bilgileri
 
-## Her swerve sürüşü farklıdır!
+## Her swerve drive farklıdır!
 
 SDS MK4 ve MaxSwerve gibi COTS swerve modülleriyle bile. Her robotun farklı boyutları vardır ve aynı muamele edilmemelidir.
 

@@ -44,7 +44,7 @@ Bir Swerve Modülünü düzgün bir şekilde yapılandırmak için tüm bunları
 
 ## Kontrol Listesi
 
-* [ ] Dümenleme/Azimut/Açı motoru [ mutlak enkoder değeriyle artıyor](#user-content-fn-1)[^1].
+* [ ] Dümenleme/Azimut/Açı motoru [mutlak enkoder değeriyle artıyor](#user-content-fn-1)[^1].
 * [ ] Dümenleme/Azimut/Açı motoru saat yönünün tersine pozitif artıyor.
 * [ ] Sürüş motorları robotu "ileri" iterek artıyor
 * [ ] Mutlak Enkoderler Swerve Modülüne güvenli bir şekilde oturtulmuş.
@@ -306,7 +306,7 @@ Dümenleme Motoru PID'si, geri bildirim sensörüne dayalı olarak tekerleğin a
 1. PID Sarma (Wrapping), tekerleğin her zaman hedef açıya giden en kısa yolu seçmesini sağlar.
 2. Dişlilerinizi sık sık yağlayın!!!
 3. Doğru dönüşüm faktörünü hesaplayın.
-4. Donanım istemcisi veya tuner x kullanarak hızlı ve doğru bir şekilde ayarlayın.
+4. Donanım istemcisi veya Tuner X kullanarak hızlı ve doğru bir şekilde ayarlayın.
 
 WPILib, tam olarak aynı prensip olan bir taret konumu kontrolcüsü hakkında bazı belgelere sahiptir.
 

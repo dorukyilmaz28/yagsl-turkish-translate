@@ -4,6 +4,17 @@ description: Bu bazen yararlıdır
 
 # Kosinüs Telafisi
 
+## Cosine Compensation (Kosinüs Telafisi) nedir?
+
+Kosinüs telafisi, bir swerve modülünün tekerlek hızı, modülün hedef açıya ne kadar dönük olduğuna bağlı olarak ayarlanmasıdır.\
+Bu ayarlama, modülün mevcut açısı ile hedef açısı arasındaki farkın kosinüsü alınarak yapılır.
+
+Basitçe:
+
+* Tekerlek doğru yöne bakıyorsa → tam hız
+* Tekerlek hedef yöne eğikse → hız düşürülür
+* Tekerlek ters yöne bakıyorsa → hız neredeyse sıfırlanır
+
 ## Kosinüs Telafisi nasıl çalışır?
 
 Kosinüs telafisi, tekerleğinizin hızını swerve modülünün açı deltasının kosinüsüyle ölçeklendirir.

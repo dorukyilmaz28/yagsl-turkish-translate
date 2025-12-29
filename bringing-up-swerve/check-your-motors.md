@@ -6,9 +6,11 @@ CAN ID'lerinizin benzersiz olduğundan emin olun! REV Güç Dağıtım Hub'ını
 
 ## Her bileşeni ID'leriyle Fiziksel Olarak Etiketleyin
 
-Bir swerve sürüşü (veya başka herhangi bir sürüş sistemi) yapılandırmasını mahvetmenin, sürüş motoru, açı motoru, mutlak enkoder veya jiroskop olsun, bir bileşen için yanlış kanal numarasını, CAN ID'sini ve hatta CAN veri yolunu (cihazınız bir CANivore üzerindeyse) koymaktan daha kolay bir yolu yoktur. Bazı bileşenlerin NavX'ler gibi ID'leri yoktur ve bunun yerine bağlantı yöntemini tanımlayan birkaç farklı `tür`e (`navx_spi`, `navx_usb`, `navx_i2c`) sahiptirler, bunların önceden bilinmesi gerekir.
+Bir swerve sürüşünü (ya da herhangi bir sürüş sistemini) yapılandırırken yapılabilecek en kolay ve en kritik hatalardan biri; bir bileşen için yanlış kanal numarası, yanlış CAN ID ya da yanlış CAN hattı (örneğin cihaz CANivore üzerindeyse) tanımlamaktır. Bu durum; sürüş motoru, açı/azimuth motoru, mutlak enkoder veya jiroskop için geçerlidir.
 
-Robotunuzu yapılandırmaya başlamadan önce [robotunuzu tanıma](../configuring-yagsl/getting-to-know-your-robot/ "mention") sayfasındaki bilgileri bulmanızı şiddetle tavsiye ederim.
+Bazı bileşenlerin ise klasik anlamda bir ID’si yoktur. Örneğin NavX sensörleri, bağlantı yöntemine göre farklı türlerde tanımlanır (`navx_spi, navx_usb, navx_i2c`). Bu türlerin hangisinin kullanıldığının yapılandırmaya başlamadan önce bilinmesi gerekir.
+
+Robotunuzu yapılandırmaya başlamadan önce [getting-to-know-your-robot](../configuring-yagsl/getting-to-know-your-robot/ "mention") sayfasındaki bilgileri bulmanızı şiddetle tavsiye ederim.
 
 ## Motorlar saat yönünün tersine pozitif dönmelidir
 
@@ -22,7 +24,9 @@ Robot devre dışıyken motorunuzu döndürdüğünüzde `swerve/modules/.../Raw
 
 ## Dönüşüm Faktörleri ve motorlarınız
 
-Dönüşüm faktörleri, motorunuzun yerel birimlerden (genellikle _**dönüşler**_) dümenleme/azimut/açı motorları için dereceye ve sürüş motorları için metreye dönüştürmek üzere uygulanır. Dönüşüm faktörleri, motor kontrolcünüze bağlı bir mutlak enkoder olması durumu haricinde, yalnızca motor kontrolcüleri için geçerlidir.
+Dönüşüm katsayıları (conversion factors), motorların yerel (native) birimlerini — genellikle dönüş (rotation) — daha anlamlı fiziksel birimlere çevirmek için kullanılır. Açı/azimuth/steering motorları için bu birim derece, sürüş motorları için ise metredir.
+
+Dönüşüm katsayıları normalde yalnızca motor sürücüleri için geçerlidir. Ancak motor sürücüsüne bağlı bir mutlak (absolute) enkoder varsa, bu durumda dönüşüm katsayıları enkoder ölçümleri için de dikkate alınmalıdır.
 
 ## Mutlak Enkoder ofseti
 
@@ -36,7 +40,7 @@ Mutlak enkoder ofseti, swerve modülünüzün güç kesintileri arasında tekerl
 
 <figure><img src="../.gitbook/assets/devilbots_cropped_swerve_orientation.png" alt=""><figcaption></figcaption></figure>
 
-2. Kodunuzu dağıtın (deploy).
+2. Kodunuzu deploy edin.
 3. **ROBOTUNUZU ETKİNLEŞTİRMEYİN! (DO NOT ENABLE)**
 4. Sürücü panelinizi açın.
 
@@ -53,7 +57,8 @@ Mutlak enkoder ofseti, swerve modülünüzün güç kesintileri arasında tekerl
 
 MAXSwerveModules kullanarak hizaladığınızda ve her modül için `absoluteEncoderOffset` değerini bulduğunuzda, modül konumunu düzeltmek için **`absoluteEncoderOffset` değerinden +/-`90`** yapmanız gerekebilir. `absoluteEncoderInverted` da her modül konfigürasyonunda `true` olmalıdır.
 
-<pre class="language-json"><code class="lang-json">{
+```json
+{
   "drive": {
     "type": "sparkmax",
     "id": 12,
@@ -80,5 +85,5 @@ MAXSwerveModules kullanarak hizaladığınızda ve her modül için `absoluteEnc
     "left": -12
   }
 }
-</code></pre>
+```
 {% endhint %}

@@ -14,11 +14,11 @@ YAGSL geliştirmesi `src/main/java/swervelib` adresindeki YAGSL-Example deposunu
 YAGSL-Example dev branch
 {% endembed %}
 
-Tüm PR'lar buraya dayanmalı ve burada birleştirilmelidir. YAGSL sık sık diğer depolara dağıtılır.
+Tüm PR'lar buraya dayanmalı ve burada birleştirilmelidir.&#x20;
 
 ## 2025.8.0
 
-* Fırçalı SparkMAX'ler ile bağlı mutlak enkoderleri düzelt
+* Fırçalı SparkMAX'ler ile bağlı mutlak enkoderleri düzeltildi.
 
 ## 2025.7.2
 
@@ -108,7 +108,7 @@ Tüm PR'lar buraya dayanmalı ve burada birleştirilmelidir. YAGSL sık sık di�
 ## 2025.1.0.1
 
 * [ ] SparkMAX ve SparkFlex için konfigürasyon yedekliliği (redundancy) eklendi.
-* [ ] driveWithSetpointGenerator için döngü süresini düzelt ve alan yönelimli kontrol kullan ([#271 ](https://github.com/BroncBotz3481/YAGSL-Example/pull/271) @[**jwt388**](https://github.com/jwt388) tarafından**)**
+* [ ] driveWithSetpointGenerator için döngü süresini düzelt ve alan yönelimli kontrol kullan ([#271 ](https://github.com/BroncBotz3481/YAGSL-Example/pull/271)@[**jwt388**](https://github.com/jwt388) tarafından\*\*)\*\*
 * [ ] Telemetriye döngü süreleri eklendi.
 * [ ] Telemetri, yalnızca `SwerveDriveTelemetry.updateSettings` `true` olduğunda ayarları gönderecek şekilde optimize edildi.
 * [ ] SparkMAX ve SparkFlex için yeniden deneme gecikmesi 10ms'den 5ms'e düşürüldü.
@@ -161,11 +161,11 @@ Tüm PR'lar buraya dayanmalı ve burada birleştirilmelidir. YAGSL sık sık di�
 
 ## 2024.6.0.0
 
-* [ ] Swerve konfigürasyon test değişikliklerini birleştir (PR [#228](https://github.com/BroncBotz3481/YAGSL-Example/pull/228), [**clrozeboom**](https://github.com/clrozeboom) tarafından**)**
+* [ ] Swerve konfigürasyon test değişikliklerini birleştir (PR [#228](https://github.com/BroncBotz3481/YAGSL-Example/pull/228), [**clrozeboom**](https://github.com/clrozeboom) tarafından\*\*)\*\*
 * [ ] Açısal hız düzeltmesi (YAGSL'i büyük ölçüde iyileştiren dev güncelleme!) (PR [#231](https://github.com/BroncBotz3481/YAGSL-Example/pull/231), [yapplejack](https://github.com/yapplejack) tarafından)
-* [ ] Sparkmax optimizasyonları, avg filter değişiklikleri vb. (PR [#233](https://github.com/BroncBotz3481/YAGSL-Example/pull/233), [**yapplejack**](https://github.com/yapplejack) tarafından**)**
+* [ ] Sparkmax optimizasyonları, avg filter değişiklikleri vb. (PR [#233](https://github.com/BroncBotz3481/YAGSL-Example/pull/233), [**yapplejack**](https://github.com/yapplejack) tarafından\*\*)\*\*
 * [ ] Geçerli bir mutlak enkoder tipi olarak `sparkmax_analog5v` eklendi.
-* [ ] desaturateWheelSpeeds() için desiredChassisSpeeds kullanma önerisi (PR [#232](https://github.com/BroncBotz3481/YAGSL-Example/pull/232), [**yapplejack**](https://github.com/yapplejack) tarafından**)**
+* [ ] desaturateWheelSpeeds() için desiredChassisSpeeds kullanma önerisi (PR [#232](https://github.com/BroncBotz3481/YAGSL-Example/pull/232), [**yapplejack**](https://github.com/yapplejack) tarafından\*\*)\*\*
 * [ ] Otomatik senkronizasyon `SwerveDrive.setModuleEncoderAutoSynchronize` ile isteğe bağlı ve yapılandırılabilir hale getirildi
 * [ ] `TalonFXSwerve` için yapılandırıcı sorunu düzeltildi
 
@@ -173,8 +173,8 @@ Tüm PR'lar buraya dayanmalı ve burada birleştirilmelidir. YAGSL sık sık di�
 
 * [ ] Örneğe PhotonVision `Vision` sınıfı eklendi ve örnek kodla entegre edildi.
 * [ ] `Vision`'a `getAprilTagPose` yöntemi eklendi (PR [#226](https://github.com/BroncBotz3481/YAGSL-Example/pull/226), [**kreidljj**](https://github.com/kreidljj) tarafından)
-* [ ] `Vision.updatePoseEstimation` üzerindeki vizyon simülasyonunu güncelle (PR [#224](https://github.com/BroncBotz3481/YAGSL-Example/pull/224), [**brandonzx3**](https://github.com/brandonzx3) tarafından**)**
-* [ ] YAGSL SwerveDrive Poz Tahmincisi için Standart Sapmalar Ekle (PR [#222](https://github.com/BroncBotz3481/YAGSL-Example/pull/222), [**maxikyuu**](https://github.com/maxikyuu) tarafından**)**
+* [ ] `Vision.updatePoseEstimation` üzerindeki vizyon simülasyonunu güncelle (PR [#224](https://github.com/BroncBotz3481/YAGSL-Example/pull/224), [**brandonzx3**](https://github.com/brandonzx3) tarafından\*\*)\*\*
+* [ ] YAGSL SwerveDrive Poz Tahmincisi için Standart Sapmalar Ekle (PR [#222](https://github.com/BroncBotz3481/YAGSL-Example/pull/222), [**maxikyuu**](https://github.com/maxikyuu) tarafından\*\*)\*\*
 * [ ] Vendordep'leri Güncelleme ve CanandCoder'ları CanandMag olarak yeniden adlandırma (PR [#219](https://github.com/BroncBotz3481/YAGSL-Example/pull/219), [**Turbojax07**](https://github.com/Turbojax07) ve YAGSL geliştiricileri tarafından)
 * [ ] `SwerveDriveTelemetry` ile ilgili dokümantasyon sorunu düzeltildi (Issue [#233 ](https://github.com/BroncBotz3481/YAGSL-Example/issues/223), [**DanPeled**](https://github.com/DanPeled) tarafından )
 * [ ] SparkMAX'e bağlı Throughbore gibi Mutlak Enkoderler düzeltildi.
