@@ -1,13 +1,14 @@
 ---
 description: >-
-  YAGSL odometriyi sizin için halleder ve istediğiniz veriyi ekleyebilmeniz için genişletir!
+  YAGSL odometriyi sizin için halleder ve istediğiniz veriyi ekleyebilmeniz için
+  daha iyi hale getiriyoruz.
 ---
 
-# Görüntü Odometrisi (Vision Odometry)
+# Görüntü Odometrisi
 
 ## Vision Odometry Nedir?
 
-Görüntü odometrisi (vision odometry) verisi normalde [`SwerveDrivePoseEstimator.addVisionMeasurement`](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/estimator/PoseEstimator.html#addVisionMeasurement\(edu.wpi.first.math.geometry.Pose2d,double,edu.wpi.first.math.Matrix\)) kullanılarak eklenir ve YAGSL [`SwerveDrivePoseEstimator`](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/estimator/SwerveDrivePoseEstimator.html)'ı sizin için hallettiğinden, kendi tahmincisinizi (estimator) oluşturmak yerine [`SwerveDrive.addVisionMeasurement`](https://broncbotz3481.github.io/YAGSL-Lib/docs/swervelib/SwerveDrive.html#addVisionMeasurement\(edu.wpi.first.math.geometry.Pose2d,double\)) ile görüntü ölçümlerini işlemek için [`SwerveDrive`](https://broncbotz3481.github.io/YAGSL-Lib/docs/swervelib/SwerveDrive.html) içindeki işlevleri genişletiyoruz.
+Görüntü odometrisi (vision odometry) verisi normalde [`SwerveDrivePoseEstimator.addVisionMeasurement`](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/estimator/PoseEstimator.html#addVisionMeasurement\(edu.wpi.first.math.geometry.Pose2d,double,edu.wpi.first.math.Matrix\)) kullanılarak eklenir ve YAGSL [`SwerveDrivePoseEstimator`](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/estimator/SwerveDrivePoseEstimator.html)'ı sizin için hallettiğinden, kendi tahmincisinizi (estimator) oluşturmak yerine [`SwerveDrive.addVisionMeasurement`](https://broncbotz3481.github.io/YAGSL-Lib/docs/swervelib/SwerveDrive.html#addVisionMeasurement\(edu.wpi.first.math.geometry.Pose2d,double\)) ile görüntü ölçümlerini işlemek için [`SwerveDrive`](https://broncbotz3481.github.io/YAGSL-Lib/docs/swervelib/SwerveDrive.html) içindeki işlevleri daha iyi hale getiriyoruz.
 
 ## Vision Odometry'i Nasıl Kullanırım?
 

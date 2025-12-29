@@ -5,26 +5,25 @@ description: Yet Another Generic Swerve Library (YAGSL) tarafından size sunulmu
 # Yet Another Swerve Document'a Hoş Geldiniz
 
 {% hint style="warning" %}
-Eğer swerve sürüşünüz sadece [CTRE](https://pro.docs.ctr-electronics.com/en/latest/index.html)'den [Falcon500](https://store.ctr-electronics.com/falcon-500-powered-by-talon-fx/)/[Kraken](https://store.ctr-electronics.com/kraken-x60/)/[TalonFXS](https://store.ctr-electronics.com/products/talon-fxs), [Pigeon2.0](https://store.ctr-electronics.com/pigeon-2/) ve [CANCoder](https://store.ctr-electronics.com/cancoder/) kullanıyorsa lütfen [Tuner X Swerve Drive Generator](https://pro.docs.ctr-electronics.com/en/latest/docs/tuner/tuner-swerve/index.html)'ı kullanın!
+Eğer swerve modülünüz sadece [CTRE](https://pro.docs.ctr-electronics.com/en/latest/index.html)'den [Falcon500](https://store.ctr-electronics.com/falcon-500-powered-by-talon-fx/)/[Kraken](https://store.ctr-electronics.com/kraken-x60/)/[TalonFXS](https://store.ctr-electronics.com/products/talon-fxs), [Pigeon2.0](https://store.ctr-electronics.com/pigeon-2/) ve [CANCoder](https://store.ctr-electronics.com/cancoder/) kullanıyorsa lütfen [Tuner X Swerve Drive Generator](https://pro.docs.ctr-electronics.com/en/latest/docs/tuner/tuner-swerve/index.html)'ı kullanın!
 {% endhint %}
-
-<figure><img src=".gitbook/assets/YAGSL.png" alt=""><figcaption></figcaption></figure>
 
 ## Genel Bakış
 
-YAGSL, mevcut ve eski BroncBotz mentorları tarafından tüm FRC Takımları için geliştirilmiş bir Swerve Kütüphanesidir. YAGSL'in amacı, her teknik seviyedeki takımların her türlü swerve modülüyle swerve sürüşlerini, hepimizin bildiği `DifferentialDrive` kadar kolay bir şekilde kontrol etmelerine yardımcı olmaktır. YAGSL iyi belgelenmiştir, aktif olarak bakımı yapılmaktadır ve her zaman yardıma açıktır!
+YAGSL, mevcut ve eski BroncBotz mentorları tarafından tüm FRC takımları için geliştirilmiş bir swerve sürüş kütüphanesidir. Amacı, her teknik seviyeden takımın farklı swerve modüllerini, `DifferentialDrive` kadar kolay hale getirerek hızlı ve güvenli bir şekilde kullanılmasını sağlamaktır.\
+Aktif geliştirilen yapısı, güçlü dokümantasyonu ve topluluk desteğiyle FRC dünyasında yaygın olarak tercih edilmektedir.
 
 {% embed url="https://datawrapper.dwcdn.net/ZVxvE/13/" %}
 
 ## Felsefemiz
 
-Programınız swerve sürüşünüzün etrafında dönmemelidir. Sabitler dosyanızda doğru seçeneği bulmak 10 dakika sürmemelidir. Farklı robotlar aynı kodla çalışabilmelidir.
+Robot yazılımınız, swerve sürüşe bağımlı olacak şekilde tasarlanmamalıdır. Yapılandırma ayarları karmaşık olmamalı ve doğru ayarı bulmak gereksiz zaman kaybettirmemelidir. Aynı kod tabanı, farklı robotlarda yeniden düzenleme gerektirmeden çalışabilmelidir.
 
 ## Neden varız?
 
-Piyasadaki çoğu swerve sürüş kodu, takımların robotlarına uyarlaması ve değiştirmesi beklenen şablonlardır. Bunlar genel (generic) değildir ve çalışır hale getirmek için çok fazla zaman ve çaba gerektirir. Tüm bu çabalardan sonra bile, başından beri orada olan hatalar olabilir veya yaptığınız değişikliklerden biri beklediğiniz gibi çalışmayabilir, vb... Daha iyi bir yol var!
+Piyasadaki swerve sürüş kodlarının çoğu, takımların alıp kendi robotlarına uyarlaması beklenen şablonlardır. Bu kodlar genel değildir ve çalışır hale getirmek için çok fazla zaman ve emek gerektirir. Tüm bu çabadan sonra bile, en başından beri var olan hatalarla karşılaşılabilir ya da yaptığınız değişikliklerden biri beklediğiniz gibi çalışmayabilir. Daha iyi bir yol var.
 
-Birden fazla robotunuz var ve aynı şekilde çalışmaları için herhangi bir kodu değiştirmek istemiyor musunuz? YAGSL yardıma yetişti! Aynı kodla bir robotu çalıştırmak için tek yapmanız gereken bir konfigürasyon dizini oluşturmak!
+Birden fazla robotunuz var ve hepsinin aynı şekilde çalışması için hiçbir kod değiştirmek istemiyor musunuz? YAGSL burada devreye giriyor. Aynı kodla bir robotu çalıştırmak için yapmanız gereken tek şey bir konfigürasyon dizini oluşturmaktır
 
 ## Hızlı Linkler
 

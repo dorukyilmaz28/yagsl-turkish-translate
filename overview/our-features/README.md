@@ -37,7 +37,7 @@ Sadece bu listeden tüm vendordep'leri WPILib online'dan indirin: [#vendor-urls]
 * [Canandcover (CAN üzerinden)](https://docs.reduxrobotics.com/canandcoder/getting-started)
 * [Throughbore](https://www.revrobotics.com/rev-11-1271/) (PWM üzerinden)
 * [Thrifty Absolute Magnetic Encoder](https://www.thethriftybot.com/products/thrifty-absolute-magnetic-encoder) (AnalogInput üzerinden)
-* [MA3](https://www.andymark.com/products/ma3-absolute-encoder-with-cable)&#x20;
+* [MA3](https://www.andymark.com/products/ma3-absolute-encoder-with-cable)
 * [SRX Mag](https://store.ctr-electronics.com/srx-mag-encoder/)
 * [AM Mag](https://www.andymark.com/products/am-mag-encoder)
 * Herhangi bir PWM Mutlak Enkoder!
@@ -45,7 +45,7 @@ Sadece bu listeden tüm vendordep'leri WPILib online'dan indirin: [#vendor-urls]
 
 ### IMU'lar (Jiroskoplar)
 
-#### **TÜM JİROSKOPLAR SAAT YÖNÜNÜN TERSİNE POZİTİF OLMALIDIR!**
+#### Tüm jiroskoplarda, saat yönünün tersi (counter-clockwise) pozitif yön olarak tanımlanmalıdır.
 
 * [Pigeon IMU](https://store.ctr-electronics.com/pigeon-2/)
 * [Pigeon 2 IMU](https://store.ctr-electronics.com/pigeon-2/)
@@ -53,13 +53,13 @@ Sadece bu listeden tüm vendordep'leri WPILib online'dan indirin: [#vendor-urls]
 * [NavX 2](https://www.studica.com/nav2-mxp-robotics-navigation-sensor)
 * [NavX Micro](https://www.studica.com/navx-2-micro-9-axis-inertialmagnetic-sensor)
 * [NavX 2 Micro](https://www.studica.com/navx-2-micro-9-axis-inertialmagnetic-sensor)
-* [ADIS16448](https://wiki.analog.com/first/adis16448\_imu\_frc)
-* [ADIS16470](https://wiki.analog.com/first/adis16470\_imu\_frc)
+* [ADIS16448](https://wiki.analog.com/first/adis16448_imu_frc)
+* [ADIS16470](https://wiki.analog.com/first/adis16470_imu_frc)
 * Herhangi bir analog jiroskop
 
 ## Simülasyon
 
-* `YAGSl-Example` içinde kutudan çıktığı gibi tam simülasyon desteği vardır.
+* `YAGSl-Example` ek bir yapılandırma gerektirmeden tam simülasyon desteği ile birlikte gelir.
 
 ## Kontrol
 
@@ -70,7 +70,7 @@ Sadece bu listeden tüm vendordep'leri WPILib online'dan indirin: [#vendor-urls]
 * Swerve Modülü sürüş motoru feedforward (ileri besleme) değerleri `SwerveDrive.replaceSwerveModuleFeedforward` fonksiyonu kullanılarak değiştirilebilir.
 * Robotun kontrolünü iyileştirmek için `SwerveController.getTargetSpeeds`'e `SwerveController.addSlewRateLimiters` ile slew rate limiter'lar eklenebilir.
 * Robotun hızını sınırlamak ve devrilmeyi önlemek için uzaydaki nesneleri kullanan Momentum hesaplayıcısı `Matter` sınıfı ile temsil edilir.
-* CAN çerçeveleri, önceki açı ve hızdan farklı olan güncellenmiş açı ve hızlarla sınırlıdır.
+* CAN trafiği, sadece değişen açı ve hız değerleriyle sınırlandırılmıştır.
 * `SwerveDrive.setMaximumSpeed` ve `SwerveController.setMaximumAngularVelocity` veya `SwerveDrive.setMaximumSpeeds` yardımcı fonksiyonları ile maksimum hızları üzerine yazma (overwrite) yeteneği.
 * Sadece `SwerveDrive.drive` fonksiyonlarını etkileyen `SwerveDrive.chassisVelocityCorrection` kullanarak Şasi Hız Düzeltmesi kullanma yeteneği.
 * `SwerveDrive.drive` ile farklı dönüş merkezleri kullanarak kontrol yeteneği.
@@ -112,4 +112,3 @@ Sadece bu listeden tüm vendordep'leri WPILib online'dan indirin: [#vendor-urls]
 * İstenen şasi hızı raporlanır.
 * Robotun sahadaki mevcut konumunu ve yönünü temsil etmek için sürekli olarak oluşturulan ve güncellenen bir Field2d vardır.
 * Test ederken `SwerveDrive.postTrajectory` ile sahaya yörüngeler ekleyebilirsiniz.
-

@@ -2,11 +2,13 @@
 description: YAGSL'in bunun için bir yardımcısı var!
 ---
 
-# Pozu Kilitleme (Lock Pose)
+# Pose Kilitleme
 
 ## Lock Pose Nedir?
 
-Lock Pose, bir konumda kalmak ve hareket ettirilmesi inanılmaz derecede zor hale gelmek istediğinizde kullanılan özel bir durumdur. Tüm tekerlekler içe doğru X formasyonuna işaret eder. Bu **yalnızca** başka hiçbir girdi verilmediğinde kullanılmalıdır, aksi takdirde bazı bozulmalara yol açan tanımsız davranışlar oluşabilir.
+Lock Pose, robotun mevcut pozisyonunu korumak ve dış kuvvetlerle itilmesini veya döndürülmesini zorlaştırmak için kullanılan özel bir durumdur. Bu durumda tüm tekerlekler, birbirine zıt yönlerde olacak şekilde X formasyonuna döndürülür. Böylece robot pasif olarak kilitlenmiş gibi davranır.
+
+Lock Pose yalnızca herhangi bir sürüş girdisi verilmediğinde kullanılmalıdır. Aynı anda sürüş komutu uygulanması, sistemde çakışmalara yol açabilir ve tanımsız veya beklenmeyen davranışların ortaya çıkmasına neden olabilir.
 
 ## Lock Pose'u Nasıl Kullanırım?
 
@@ -72,4 +74,3 @@ Herhangi bir kontrolcü girdisi iletmek yerine [`SwerveDrive.lockPose()`](https:
 }
 
 </code></pre>
-

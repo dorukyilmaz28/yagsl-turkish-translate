@@ -1,12 +1,14 @@
 ---
-description: YAGSL-Example kutudan çıktığı gibi simülasyon sağlar!
+description: >-
+  YAGSL-Example, varsayılan olarak tam simülasyon desteğine sahiptir ve ek
+  kurulum gerektirmez.
 ---
 
 # Simülasyon
 
 ## Nasıl çalışır?
 
-YAGSL, satıcılar tarafından sağlanan simülasyon modüllerini değişen destek derecelerinde kullanarak tüm robotu simüle eder. Gerekli verileri sağlayan `SwerveModuleSimulation` ve `SwerveIMUSimulation` adında tamamen simüle edilmiş bir SwerveModule vardır.
+YAGSL, üreticilerin sunduğu simülasyon modüllerini kullanarak robotun tamamını simüle eder. Gerekli veriler, tamamen simüle edilmiş `SwerveModuleSimulation`  ve  `SwerveIMUSimulation`  sınıfları tarafından sağlanır.&#x20;
 
 ## Nasıl etkinleştiririm?
 
@@ -31,7 +33,7 @@ Simülasyonun düzgün çalışması için tek yapmanız gereken, aşağıdaki �
 </strong>  }
 </code></pre>
 
-Daha sonra simülasyonu wpilib'de normalde yaptığınız gibi çalıştırın.
+Daha sonra simülasyonu WPILiB'de normalde yaptığınız gibi çalıştırın.
 
 Daha fazla bilgi için simülasyon hakkındaki WPILib dokümantasyonuna göz atın!
 

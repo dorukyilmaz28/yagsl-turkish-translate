@@ -1,18 +1,19 @@
 # Başlık (Heading) Düzeltme
 
-## Başlık Düzeltme Nedir?
+## Heading Correction Nedir?
 
-Başlık düzeltme, robot öteleme (translating) yaparken robot başlığını (yönünü) önceki başlık ile aynı tutmak için kullanılır. Agresiftir ve açısal rotasyon tabanlı kontrol şemalarının çalışmasını engelleyecektir.
+Heading Correction, robot hareket ederken (dönme hareketi yaparken) yönünün önceki heading değerinde kalmasını sağlamak için kullanılan bir kontrol mekanizmasıdır. Robot ileri–geri veya yana doğru giderken, kendi etrafında istemsiz dönmesini engeller.\
+Bu sistem oldukça **agresif** çalışır ve bu nedenle açısal dönüşe dayalı kontrol şemalarıyla (örneğin joystick ile dönme) birlikte kullanıldığında çakışmalara neden olabilir.
 
-Başlık düzeltme YAGSL'e Takım 1466 tarafından eklendi ve 7525 Pioneers ve 6036'dan BoiledBurntBagel tarafından geliştirildi.
+Heading Correction, YAGSL’e Team 1466 tarafından eklenmiş; daha sonra 7525 Pioneers ve 6036’dan BoiledBurntBagel tarafından geliştirilmiştir.
 
 ## Nasıl etkinleştiririm?
 
-Başlık düzeltmeyi herhangi bir yerden [`SwerveDrive.setHeadingCorrection`](https://broncbotz3481.github.io/YAGSL-Lib/docs/swervelib/SwerveDrive.html#setHeadingCorrection\(boolean\)) kullanarak etkinleştirebilir veya devre dışı bırakabilirsiniz. Ölü bant (deadband), hem saniyedeki metre hem de saniyedeki radyanı temsil eden keyfi bir değerdir.
+Heading Correction, [`SwerveDrive.setHeadingCorrection`](https://broncbotz3481.github.io/YAGSL-Lib/docs/swervelib/SwerveDrive.html#setHeadingCorrection\(boolean\))  metodu kullanılarak istenilen yerden açılıp kapatılabilir. Burada kullanılan deadband değeri, hem metre/saniye cinsinden doğrusal hızları hem de radyan/saniye cinsinden açısal hızları temsil eden eşik değeridir.
 
-## Başlık düzeltme kodda ne yapar?
+## Heading Correction kodda ne yapar?
 
-Başlık düzeltme, [`SwerveDrive.setHeadingCorrection`](https://broncbotz3481.github.io/YAGSL-Lib/docs/swervelib/SwerveDrive.html#setHeadingCorrection\(boolean,double\)) ölü bandı aracılığıyla başlığı kontrol etmek için [`SwerveDrive.drive`](https://broncbotz3481.github.io/YAGSL-Lib/docs/swervelib/SwerveDrive.html#drive\(edu.wpi.first.math.kinematics.ChassisSpeeds,boolean,edu.wpi.first.math.geometry.Translation2d\)) içinde kullanılır. Başlık düzeltme, [`SwerveController.headingCalculate`](https://broncbotz3481.github.io/YAGSL-Lib/docs/swervelib/SwerveController.html#headingCalculate\(double,double\)) kullanarak bir omega dönüş hızı hesaplamak için `controllerproperties.json` dosyasındaki başlık PID'sini ve mevcut sapmayı (yaw) kullanır.
+Heading Correction, [`SwerveDrive.drive`](https://broncbotz3481.github.io/YAGSL-Lib/docs/swervelib/SwerveDrive.html#drive\(edu.wpi.first.math.kinematics.ChassisSpeeds,boolean,edu.wpi.first.math.geometry.Translation2d\))  metodu içinde kullanılarak,  [`SwerveDrive.setHeadingCorrection`](https://broncbotz3481.github.io/YAGSL-Lib/docs/swervelib/SwerveDrive.html#setHeadingCorrection\(boolean,double\))  ile tanımlanan deadband üzerinden robotun yönünü kontrol eder. Bu süreçte, `controllerproperties.json` dosyasında tanımlı heading PID değerleri ve robotun anlık yaw bilgisi kullanılarak,  [`SwerveController.headingCalculate`](https://broncbotz3481.github.io/YAGSL-Lib/docs/swervelib/SwerveController.html#headingCalculate\(double,double\)) metodu aracılığıyla bir açısal hız (omega) hesaplanır.
 
 ```java
     // Heading Angular Velocity Deadband, might make a configuration option later.

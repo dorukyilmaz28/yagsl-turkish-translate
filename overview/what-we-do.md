@@ -4,7 +4,7 @@ description: Swerve sürüşünüzü çalıştırıyoruz!
 
 # Ne yapıyoruz
 
-## YAGSL programıma nereye oturuyor?
+## YAGSL programımda nasıl konumlanır?
 
 YAGSL esasen, [WPILib](https://docs.wpilib.org/en/stable/docs/software/hardware-apis/motors/wpi-drive-classes.html)'den bildiğimiz [`DifferentialDrive`](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/drive/DifferentialDrive.html) gibi davranmayı amaçlayan ancak Swerve Sürüşleri için olan tek bir sınıfa [`SwerveDrive`](https://broncbotz3481.github.io/YAGSL-Lib/docs/swervelib/SwerveDrive.html) indirgenir.
 
