@@ -1,4 +1,4 @@
-# Kaymayı (Drift) Ayarlayarak Giderme
+# Kaymayı (Drift) Ayarlama
 
 Mevcut pozunuzu hesaplamaya çalışırken, poz tahmincisi (pose estimator) bir dereceye kadar mükemmel bir iş çıkarır (bunu ayarlayabilirsiniz ancak çoğu takım yapmaz).
 
@@ -13,7 +13,7 @@ Bundan sonra, [jiroskop sistem gecikmesini telafi etmek için açısal hız kats
 Bunların hepsi birbirinin üzerine inşa edilen bireysel ayarlama adımlarıdır.
 
 {% hint style="warning" %}
-Alt adımlardan biriyle oynarsanız, tüm üst adımlar senkronizasyon dışı kalır ve jiroskopunuz gibi bir parçayı değiştirmeniz gerekirse yine de hepsini yeniden yapmanız gerekebilir.
+Alt sistemlerden biriyle oynarsanız, tüm üst sistemlerin senkronizasyonu devre dışı kalır ve jiroskopunuz gibi bir parçayı değiştirmeniz gerekirse yine de hepsini yeniden yapmanız gerekebilir.
 {% endhint %}
 
 Kaymayı ayarlayarak giderme konusundaki ağır matematiksel açıklama burada mevcuttur.
